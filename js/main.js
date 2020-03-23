@@ -10,6 +10,7 @@ $(function () {
         slidesToShow: 4,
         slidesToScroll: 4,
         asNavFor: '.header__slider',
+        
     });
     $('.surf__slider').slick({
         slidesToShow: 4,
@@ -26,7 +27,7 @@ $(function () {
         asNavFor: '.surf__slider',
         focusOnSelect: true,
     });
-    $('.holder__slider').slick({
+    $('.holder__slider, .shop__slider').slick({
         infinite: true,
         fade: true,
         nextArrow: '<img class="slider-arrows slider-arrows__right" src="images/arrow-right.svg" alt="">',
@@ -67,6 +68,15 @@ $(function () {
     $('.quantity-button').on('click', function () {
         let summ = $('.nights').val() * $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
         $('.summ').html('$' + summ);
+    });
+    let summ = $('.nights').val() * $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
+    $('.summ').html('$' + summ);
+    $('.surfboard-box__circle').on('click', function () {
+        $(this).toggleClass('active');
+    });
+
+    $('.menu-btn').on('click', function () {
+        $('.menu').toggleClass('active');
     });
 
 });
